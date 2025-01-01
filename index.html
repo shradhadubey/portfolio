@@ -4,25 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shradha Dubey | Data Engineer Portfolio</title>
-    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #007BFF;
+            --secondary-color: #FFD700;
+            --background-color: #f4f4f9;
+            --text-color: #333;
+            --accent-color: #FF5733;
+            --hover-color: #0056b3;
+        }
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            background-color: var(--background-color);
+            color: var(--text-color);
         }
         header {
-            background-color: #007BFF;
+            background: linear-gradient(to right, var(--primary-color), var(--accent-color));
             color: white;
-            padding: 1em 0;
+            padding: 2em 0;
             text-align: center;
         }
         header h1 {
             margin: 0;
             font-size: 2.5em;
+            animation: fadeIn 2s;
         }
         header p {
             margin: 0.5em 0;
@@ -32,18 +40,20 @@
             padding: 0;
             display: flex;
             justify-content: center;
-        }
-        nav ul li {
-            margin: 0 1em;
+            gap: 1em;
         }
         nav ul li a {
             text-decoration: none;
             color: white;
             font-weight: bold;
-            transition: color 0.3s;
+            padding: 0.5em 1em;
+            background-color: var(--accent-color);
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
         }
         nav ul li a:hover {
-            color: #FFD700;
+            background-color: var(--hover-color);
+            transform: scale(1.1);
         }
         section {
             padding: 2em 1em;
@@ -51,6 +61,7 @@
         .container {
             max-width: 800px;
             margin: 0 auto;
+            text-align: center;
         }
         .skills-list, .experience ul, .project {
             background: white;
@@ -58,28 +69,38 @@
             padding: 1em;
             margin: 1em 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .skills-list:hover, .experience ul:hover, .project:hover {
+            transform: scale(1.02);
         }
         footer {
-            background-color: #007BFF;
+            background-color: var(--primary-color);
             color: white;
             text-align: center;
             padding: 1em 0;
             margin-top: 2em;
         }
-        footer p {
-            margin: 0;
-        }
         a.button {
             display: inline-block;
             padding: 0.5em 1em;
             color: white;
-            background-color: #007BFF;
+            background-color: var(--accent-color);
             border-radius: 4px;
             text-decoration: none;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.3s;
         }
         a.button:hover {
-            background-color: #0056b3;
+            background-color: var(--hover-color);
+            transform: translateY(-3px);
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
